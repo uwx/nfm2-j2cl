@@ -7,43 +7,33 @@ import jsinterop.annotations.JsType;
 
 import java.awt.*;
 
+import static elemental2.dom.DomGlobal.setTimeout;
+
 @JsType
 public class NFMM {
-
-    public static final String HELLO_WORLD = "Hello J2CL world!";
-    public static HTMLCanvasElement canvas;
-
-    public void onModuleLoad() {
-        canvas = (HTMLCanvasElement) DomGlobal.document.createElement("canvas");
-
-        DomGlobal.document.body.appendChild(canvas);
-
-        Frame frame = new Frame("UNFM2");// Change this to the name of your preference
-        frame.setBackground(new Color(0, 0, 0));
-        frame.setIgnoreRepaint(true);
-//        frame.setIconImages(getIcons());
-
+    public void start() {
         GameSparker applet = new GameSparker();
-
-//        applet.setStub(new DesktopStub());
-//        frame.addWindowListener(new WindowAdapter() {
-//            @Override
-//            public void windowClosing(WindowEvent windowevent) {
-//                exitSequence();
-//            }
-//        });
-        applet.setPreferredSize(new Dimension(670, 400));// The resolution of your game goes here
-        frame.add("Center", applet);
-        frame.setResizable(false);// If you plan to make you game support changes in resolution, you can comment out this line.
-        frame.pack();
-        frame.setMinimumSize(frame.getSize());
-//        frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
+        applet.setSize(670, 400);
         applet.init();
-        applet.start();
+        new GameTicker(applet).run();
     }
 
-    public String helloWorldString() {
-        return HELLO_WORLD;
+    private static class GameTicker {
+        private final GameSparker applet;
+
+        public GameTicker(GameSparker applet) {
+            this.applet = applet;
+        }
+
+        public void run() {
+            applet.run();
+            update();
+        }
+
+        private void update(Object... p0) {
+            long msToWait = applet.gameTick();
+
+            setTimeout(this::update, msToWait);
+        }
     }
 }

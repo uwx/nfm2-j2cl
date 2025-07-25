@@ -7,6 +7,6 @@ setTimeout(function(){
   // static imports haven't been resolved yet.
   var ep = new NFMM();
   // Invoke onModuleLoad to start the app.
-  ep.onModuleLoad()
+  ep.start()
 }, 0);
 
