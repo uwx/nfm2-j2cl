@@ -24,9 +24,6 @@
  */
 package javax.swing.event;
 
-import static jsweet.util.Lang.any;
-import static jsweet.util.Lang.array;
-
 import java.io.Serializable;
 import java.util.EventListener;
 
@@ -41,30 +38,32 @@ public class EventListenerList implements Serializable {
 		return listenerList;
 	}
 
-	public <T extends EventListener> T[] getListeners(Class<T> t) {
+	@SuppressWarnings({"unchecked", "DataFlowIssue"})
+    public <T extends EventListener> T[] getListeners(Class<T> t) {
 		Object[] lList = listenerList;
 		int n = getListenerCount(lList, t);
-		T[] result = array(new def.js.Array<T>(n));// (T[])Array.newInstance(t,
+		T[] result = (T[]) new Object[n];// (T[])Array.newInstance(t,
 														// n);
 		int j = 0;
 		for (int i = lList.length - 2; i >= 0; i -= 2) {
 			if (lList[i] == t) {
-				result[j++] = any(lList[i + 1]);
+				result[j++] = (T) lList[i + 1];
 			}
 		}
 		return result;
 	}
 
 	// hack
+	@SuppressWarnings({"unchecked", "DataFlowIssue"})
 	public <T extends EventListener> T[] getListeners(String t) {
 		Object[] lList = listenerList;
 		int n = getListenerCount(lList, t);
-		T[] result = array(new def.js.Array<T>(n));// (T[])Array.newInstance(t,
+		T[] result = (T[]) new Object[n];// (T[])Array.newInstance(t,
 														// n);
 		int j = 0;
 		for (int i = lList.length - 2; i >= 0; i -= 2) {
 			if (lList[i] == t) {
-				result[j++] = any(lList[i + 1]);
+				result[j++] = (T) lList[i + 1];
 			}
 		}
 		return result;

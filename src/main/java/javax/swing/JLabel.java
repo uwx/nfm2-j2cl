@@ -100,7 +100,7 @@ public class JLabel extends JComponent implements SwingConstants {
 	}
 
 	HTMLLabelElement htmlLabelElement;
-	HTMLImageElement htmlImageElement;
+	HTMLElement htmlImageElement;
 
 	@Override
 	public void createHTML() {

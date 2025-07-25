@@ -5,13 +5,9 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import elemental2.dom.Element;
-import elemental2.dom.HTMLCollection;
-import elemental2.dom.HTMLDivElement;
 import elemental2.dom.Node;
 import j2ts_awt_swing.impl.CanvasImage;
-import j2ts_awt_swing.impl.HTMLComponent;
 
-import static elemental2.dom.DomGlobal.document;
 import static elemental2.dom.DomGlobal.window;
 
 public abstract class Applet extends Panel {

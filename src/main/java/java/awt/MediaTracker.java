@@ -1,7 +1,5 @@
 package java.awt;
 
-import java.applet.Applet;
-
 public class MediaTracker {
     public MediaTracker(Component comp) {
     }

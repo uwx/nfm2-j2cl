@@ -25,13 +25,10 @@
 
 package java.awt;
 
-import elemental2.dom.TextMetrics;
 import j2ts_awt_swing.impl.TextMetricsEx;
 import j2ts_awt_swing.impl.WebGraphics2D;
 import jsinterop.base.Js;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
-import java.awt.Graphics2D;
 import java.awt.geom.Rectangle2D;
 import java.text.CharacterIterator;
 
@@ -376,7 +373,8 @@ public abstract class FontMetrics implements java.io.Serializable {
      * @see       #stringWidth(String)
      */
     public int charsWidth(char data[], int off, int len) {
-        return stringWidth(new String(data, off, len));
+        throw new RuntimeException("Not implemented");
+//        return stringWidth(new String(data, off, len));
     }
 
     /**
@@ -598,7 +596,7 @@ public abstract class FontMetrics implements java.io.Serializable {
     public Rectangle2D getStringBounds(CharacterIterator ci,
                                        int beginIndex, int limit,
                                        Graphics context) {
-        throw new NotImplementedException();
+        throw new RuntimeException("Not implemented");
     }
 
     /**
@@ -610,7 +608,7 @@ public abstract class FontMetrics implements java.io.Serializable {
      * @see java.awt.Font#getMaxCharBounds(FontRenderContext)
      */
     public Rectangle2D getMaxCharBounds(Graphics context) {
-        throw new NotImplementedException();
+        throw new RuntimeException("Not implemented");
     }
 
 //    private FontRenderContext myFRC(Graphics context) {

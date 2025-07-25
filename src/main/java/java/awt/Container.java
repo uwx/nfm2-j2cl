@@ -25,7 +25,6 @@
 package java.awt;
 
 import elemental2.core.JsArray;
-import elemental2.dom.CSSProperties;
 import elemental2.dom.CSSProperties.ZIndexUnionType;
 
 public abstract class Container extends Component {

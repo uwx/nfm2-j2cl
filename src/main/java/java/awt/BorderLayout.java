@@ -32,7 +32,6 @@ import elemental2.dom.CSSProperties.PaddingUnionType;
 import elemental2.dom.CSSProperties.WidthUnionType;
 import elemental2.dom.CSSProperties.ZIndexUnionType;
 import j2ts_awt_swing.impl.HTMLComponent;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import static elemental2.dom.DomGlobal.document;
 

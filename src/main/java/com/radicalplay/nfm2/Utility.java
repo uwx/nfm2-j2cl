@@ -1,12 +1,9 @@
 package com.radicalplay.nfm2;
 
 import fallk.logmaster.HLogger;
-import j2ts_awt_swing.impl.ImageImpl;
 
-import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
-import java.net.URL;
 
 /**
  * Contains often used functions, and some new ones

@@ -8,11 +8,8 @@ import elemental2.dom.URL;
 import j2ts_awt_swing.impl.ImageImpl;
 import jsinterop.base.Js;
 
-import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
-
-import javax.imageio.ImageIO;
 
 public class Toolkit {
 

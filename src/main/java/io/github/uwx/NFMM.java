@@ -2,14 +2,10 @@ package io.github.uwx;
 
 import com.radicalplay.nfm2.GameSparker;
 import elemental2.dom.DomGlobal;
-import elemental2.dom.HTMLButtonElement;
 import elemental2.dom.HTMLCanvasElement;
-import elemental2.dom.HTMLDivElement;
 import jsinterop.annotations.JsType;
 
 import java.awt.*;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 
 @JsType
 public class NFMM {

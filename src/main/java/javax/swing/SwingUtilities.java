@@ -1,7 +1,5 @@
 package javax.swing;
 
-import elemental2.dom.DomGlobal;
-
 import static elemental2.dom.DomGlobal.requestAnimationFrame;
 
 public class SwingUtilities implements SwingConstants {

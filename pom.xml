@@ -15,13 +15,75 @@
     <jsinterop.base.version>1.0.0</jsinterop.base.version>
     <j2cl.version>v20230718-1</j2cl.version>
 
-    <maven.compiler.target>11</maven.compiler.target>
-    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
 
     <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
     <maven.jetty.plugin.version>9.4.44.v20210927</maven.jetty.plugin.version>
     <maven.war.plugin.version>3.3.2</maven.war.plugin.version>
   </properties>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>github-mp1-appengine-repo</id>
+      <url>https://maven-repo-254709.appspot.com</url>
+    </pluginRepository>
+
+    <pluginRepository>
+      <id>google-snapshots</id>
+      <name>google-snapshots</name>
+      <url>https://oss.sonatype.org/content/repositories/google-snapshots/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </pluginRepository>
+
+    <pluginRepository>
+      <id>vertispan-releases</id>
+      <name>Vertispan hosted artifacts-releases</name>
+      <url>https://repo.vertispan.com/j2cl</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </pluginRepository>
+
+    <pluginRepository>
+      <id>vertispan-snapshots</id>
+      <name>Vertispan Snapshots</name>
+      <url>https://repo.vertispan.com/gwt-snapshot/</url>
+      <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>daily</updatePolicy>
+        <checksumPolicy>fail</checksumPolicy>
+      </snapshots>
+    </pluginRepository>
+
+    <pluginRepository>
+      <id>sonatype-snapshots-repo</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+      <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>daily</updatePolicy>
+        <checksumPolicy>fail</checksumPolicy>
+      </snapshots>
+    </pluginRepository>
+
+    <pluginRepository>
+      <id>sonatype-repo</id>
+      <url>https://oss.sonatype.org/content/repositories/repositories</url>
+      <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>daily</updatePolicy>
+        <checksumPolicy>fail</checksumPolicy>
+      </snapshots>
+    </pluginRepository>
+  </pluginRepositories>
 
   <dependencies>
     <dependency>
@@ -114,11 +176,6 @@
             </configuration>
           </execution>
         </executions>
-        <configuration>
-          <tests>
-            <test>io.github.uwx.NFMMTest</test>
-          </tests>
-        </configuration>
       </plugin>
       <plugin>
         <groupId>org.eclipse.jetty</groupId>

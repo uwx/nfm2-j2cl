@@ -24,8 +24,6 @@
  */
 package javax.swing;
 
-import static def.jquery.Globals.$;
-
 import java.awt.Image;
 import java.awt.Insets;
 import java.awt.ItemSelectable;
@@ -193,7 +191,7 @@ public abstract class AbstractButton extends JComponent implements ItemSelectabl
 
 	public void setText(String text) {
 		this.text = text;
-		this.getHTMLElement().innerText = text;
+		this.getHTMLElement().textContent = text;
 	}
 
 	public boolean isSelected() {
@@ -206,7 +204,8 @@ public abstract class AbstractButton extends JComponent implements ItemSelectabl
 	}
 
 	public void doClick() {
-		$(getHTMLElement()).click();
+		// TODO
+//		$(getHTMLElement()).click();
 	}
 
 	public void setMargin(Insets m) {

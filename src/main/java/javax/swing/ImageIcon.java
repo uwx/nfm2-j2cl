@@ -25,9 +25,7 @@
 package javax.swing;
 
 import elemental2.dom.HTMLElement;
-import elemental2.dom.HTMLImageElement;
 import j2ts_awt_swing.impl.ImageImpl;
-import j2ts_awt_swing.impl.WebGraphics2D;
 import jsinterop.base.Js;
 
 import java.awt.Component;

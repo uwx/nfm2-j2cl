@@ -25,10 +25,6 @@
 
 package java.awt.image;
 
-import java.util.Hashtable;
-import java.awt.image.ImageProducer;
-import java.awt.image.ImageConsumer;
-import java.awt.image.ColorModel;
 import java.awt.Image;
 
 /**
@@ -235,6 +231,7 @@ public class PixelGrabber /*implements ImageConsumer*/ {
     public synchronized boolean grabPixels(long ms)
             throws InterruptedException
     {
+        return true;
     }
 
     /**

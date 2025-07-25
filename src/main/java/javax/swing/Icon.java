@@ -25,7 +25,6 @@
 package javax.swing;
 
 import elemental2.dom.HTMLElement;
-import elemental2.dom.HTMLImageElement;
 
 import java.awt.Component;
 import java.awt.Graphics;

@@ -7,10 +7,10 @@ import java.util.function.Consumer;
 
 public final class Iter {
     public static <T> Iterable<T> iter(JsArray<T> arr) {
-        return new Iterable<>() {
+        return new Iterable<T>() {
             @Override
             public Iterator<T> iterator() {
-                return new Iterator<>() {
+                return new Iterator<T>() {
                     private int idx = 0;
 
                     @Override

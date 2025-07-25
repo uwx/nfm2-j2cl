@@ -25,19 +25,17 @@
 
 package javax.swing;
 
-import static def.dom.Globals.document;
-import static jsweet.util.Lang.any;
+import elemental2.dom.HTMLDivElement;
+import elemental2.dom.HTMLTableCellElement;
+import elemental2.dom.HTMLTableElement;
+import elemental2.dom.HTMLTableRowElement;
 
 import java.awt.Component;
 import java.awt.Container;
 import java.awt.LayoutManager2;
 import java.io.Serializable;
 
-import def.dom.HTMLDivElement;
-import def.dom.HTMLTableCellElement;
-import def.dom.HTMLTableElement;
-import def.dom.HTMLTableRowElement;
-import jsweet.util.StringTypes;
+import static elemental2.dom.DomGlobal.document;
 
 @SuppressWarnings("serial")
 public class BoxLayout implements LayoutManager2, Serializable {
@@ -82,15 +80,15 @@ public class BoxLayout implements LayoutManager2, Serializable {
 		if (axis == X_AXIS || axis == LINE_AXIS) {
 			HTMLTableRowElement tr = (HTMLTableRowElement) table.firstChild;
 			if (tr == null) {
-				tr = document.createElement(StringTypes.tr);
+				tr = (HTMLTableRowElement) document.createElement("tr");
 				table.appendChild(tr);
 			}
-			HTMLTableCellElement td = document.createElement(StringTypes.td);
+			HTMLTableCellElement td = (HTMLTableCellElement) document.createElement("td");
 			td.appendChild(comp.getHTMLElement());
 			tr.appendChild(td);
 		} else {
-			HTMLTableRowElement tr = document.createElement(StringTypes.tr);
-			HTMLTableCellElement td = document.createElement(StringTypes.td);
+			HTMLTableRowElement tr = (HTMLTableRowElement) document.createElement("tr");
+			HTMLTableCellElement td = (HTMLTableCellElement) document.createElement("td");
 			tr.appendChild(td);
 			td.appendChild(comp.getHTMLElement());
 			table.appendChild(tr);
@@ -108,8 +106,8 @@ public class BoxLayout implements LayoutManager2, Serializable {
 	@Override
 	public void layoutContainer(Container target) {
 		if (table == null) {
-			table = document.createElement(StringTypes.table);
-			HTMLDivElement div = any(target.getHTMLElement());
+			table = (HTMLTableElement) document.createElement("table");
+			HTMLDivElement div = (HTMLDivElement) target.getHTMLElement();
 			div.appendChild(table);
 		}
 	}

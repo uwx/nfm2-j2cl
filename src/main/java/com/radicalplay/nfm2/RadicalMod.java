@@ -1,12 +1,6 @@
 package com.radicalplay.nfm2;
 
-import fallk.logmaster.HLogger;
-
 import java.applet.Applet;
-import java.io.ByteArrayInputStream;
-import java.net.URL;
-import java.util.zip.ZipEntry;
-import java.util.zip.ZipInputStream;
 
 public class RadicalMod {
     public int loaded;

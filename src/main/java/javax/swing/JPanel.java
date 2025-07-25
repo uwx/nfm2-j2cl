@@ -26,7 +26,6 @@ package javax.swing;
 
 import java.awt.*;
 
-import elemental2.dom.CSSProperties;
 import elemental2.dom.CSSProperties.HeightUnionType;
 import elemental2.dom.CSSProperties.WidthUnionType;
 import elemental2.dom.HTMLCanvasElement;

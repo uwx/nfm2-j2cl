@@ -688,12 +688,7 @@ public class Color implements Paint, java.io.Serializable, ToHTMLAble {
 	 * @since JDK1.0
 	 */
 	public static Color getColor(String nm, Color v) {
-		Integer intval = Integer.getInteger(nm);
-		if (intval == null) {
-			return v;
-		}
-		int i = intval.intValue();
-		return new Color((i >> 16) & 0xFF, (i >> 8) & 0xFF, i & 0xFF);
+		throw new RuntimeException("Not implemented");
 	}
 
 	/**
@@ -719,9 +714,7 @@ public class Color implements Paint, java.io.Serializable, ToHTMLAble {
 	 * @since JDK1.0
 	 */
 	public static Color getColor(String nm, int v) {
-		Integer intval = Integer.getInteger(nm);
-		int i = (intval != null) ? intval.intValue() : v;
-		return new Color((i >> 16) & 0xFF, (i >> 8) & 0xFF, (i >> 0) & 0xFF);
+		throw new RuntimeException("Not implemented");
 	}
 
 	/**
